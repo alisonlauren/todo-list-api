@@ -6,7 +6,30 @@
   <title>Document</title>
 </head>
 <body>
-  Hello
+  <h1>To Do List</h1>
+  
+<ul id="friends">
+  
+</ul>
+
+  <form id="todoForm" action="/api/todoList" method="post">
+    <div>
+      <label for="name">Id</label>
+      <input type="text" required name="name" id="name">
+    </div>
+    <div>
+      <label for="name">Task</label>
+      <input type="text" required name="name" id="name">
+    </div>
+    <div>
+      <label for="name">Complete</label>
+      <input type="text" required name="name" id="name">
+    </div>
+    <button id="form1" required type="submit">Submit</button>
+  </form>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="main.js"></script>
+  
 </body>
 </html>
