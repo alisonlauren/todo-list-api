@@ -1,18 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To DO LIST</title>
+<!-- Include Head partial -->
+${head}
 </head>
 <body>
-    <h1>My To-Do List</h1>
-    <h2>Click on one to learn more about the task</h2>
-    <ul>
-        ${todoList.map(todo => {
-            return `<li><a href="/api/todoList/${todo.id}">${todo.todo}<a></li>`
-        }) .join('')}
-    </ul>
+<!-- Render welcome message using data from route handler -->
+<h1>Welcome, ${name}</h1>
+<a href="/todos">Todos</a>
 </body>
 </html>
