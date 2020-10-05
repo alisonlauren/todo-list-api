@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>ToDo's</h1>
+    <a href="/api/todoList">To Do List</a>
+
+    <ul>
+        ${todo.map(friend => {
+            return `<li>${friend.todo} : ${friend.complete}</li>`
+        }) .join(' ')}
+    </ul>
+</body>
+</html>

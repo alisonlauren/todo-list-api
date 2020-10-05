@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 //requireing the es6 that i just downloaded
 const es6Renderer = require('express-es6-template-engine');
+const { homedir } = require('os');
 
 
 
@@ -48,13 +49,34 @@ const todoList = [
   },
 ];
 
+app.get('/', (req, res) => {
+  const name = req.query.name || "world";
+  res.render('home', {
+    locals: {
+        todoList: todoList,
+        title: "Home"
+    }, 
+    partials: {
+        head: 'partials/head'
+    }
+});
+})
+
+
 
 
 // GET /api/todos
-app.get('/api/todoList', (req,res)=>{
- res.json(todoList)
+app.get('/todo', (req,res) => {
+  res.render('todo', {
+    locals: {
+        todo: todoList
+    },
+    // partials: {
+    //     title: "Home"
+    // }
 })
-
+})
+app.get('/api/todoList', (req, res) => {  res.json(todoList)})
 
 
 // GET /api/todos/:id

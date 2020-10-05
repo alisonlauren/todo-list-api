@@ -34,7 +34,7 @@ const form = document.getElementById('todoForm')
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   console.log(e.target.elements)
-  axios.post('api/todoList', {
+  axios.post('/api/todoList', {
     id: e.target.elements.id.value,
     todo: e.target.elements.todo.value,
     complete: e.target.elements.complete.value
